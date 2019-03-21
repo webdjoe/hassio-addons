@@ -529,7 +529,7 @@ class XboxOneDevice(MediaPlayerDevice):
         """Flag media player features that are supported."""
         active_support = SUPPORT_XBOXONE
         if self.state not in [STATE_PLAYING, STATE_PAUSED]\
-                and (self._xboxone.active_app_type not in ['Application', 'App'] or self._xboxone.active_app == 'Home'):
+                and (self._xboxone.active_app_type not in ['Application', 'App', 'Game'] or self._xboxone.active_app == 'Home'):
             active_support &= ~SUPPORT_NEXT_TRACK & ~SUPPORT_PREVIOUS_TRACK
         if not self._xboxone.volume_controls:
             active_support &= ~SUPPORT_VOLUME_MUTE & ~SUPPORT_VOLUME_STEP
